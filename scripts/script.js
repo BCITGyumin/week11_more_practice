@@ -38,30 +38,30 @@
 //     resultPara.textContent = `The area of a circle with radius ${user_input} is ${raidus_result}`;
 // }
 
-// const ullist = document.querySelector(".shopping");
+const ullist = document.querySelector(".shopping");
 
-// function populatelist(shoppingListArray) 
-// {
-//     for (let item of shoppingListArray)
-//     {
-//         let product = document.createElement("li");
-//         product.textContent = item;
-//         ullist.appendChild(product);
-//     }
-// }
+function populatelist(shoppingListArray) 
+{
+    for (let item of shoppingListArray)
+    {
+        let product = document.createElement("li");
+        product.textContent = item;
+        ullist.appendChild(product);
+    }
+}
 
-// let myShoppingList = ["cheese", "bread", "green pepper"];
-// populatelist(myShoppingList);
+let myShoppingList = ["cheese", "bread", "green pepper"];
+populatelist(myShoppingList);
 
 
 
-// function squareListMaker()
-// {
-//     ullist.classList.add("squareList");
-//     ullist.classList.remove("circleList");
-// }
+function squareListMaker()
+{
+    ullist.classList.add("squareList");
+    ullist.classList.remove("circleList");
+}
 
-// squareListMaker()
+squareListMaker()
 
 
 // HTMLElement.style
@@ -80,3 +80,23 @@ function updateImage()
     // image.src = "https://cdn-icons-png.flaticon.com/512/263/263142.png";
 }
 updateImage();
+
+function makeListGreen()
+{
+    const liArray = document.querySelectorAll("li")
+    for (i = 0; i < liArray.length; i++)
+    {
+        const arrayContent = liArray[i]
+        const text = arrayContent.textContent;
+        console.log(text);
+        if (text.includes("green"))
+        {
+            // arrayContent.style.color = "green";
+            arrayContent.setAttribute("class", "greenText");
+            // arrayContent.classList.add("greenText")
+        };
+    };
+    
+};
+
+makeListGreen();
